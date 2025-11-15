@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashly Campus – Jolly Pizza to Your Dorm</title>
+  <title>Dashly Campus – Jolly to Your Dorm</title>
   <meta
     name="description"
-    content="Dashly Campus is a student-run delivery pilot at CWRU, bringing Jolly Pizza directly to dorm entrances across campus using a backyard model."
+    content="Dashly Campus is a student-run delivery pilot at CWRU, bringing Jolly Pizza, Jolly Scholar, and Southside Scholar directly to dorm entrances using a backyard model."
   />
   <style>
     * {
@@ -51,9 +51,13 @@
       font-size: 1.7rem;
       margin: 32px 0 12px;
     }
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
     p.lead {
       font-size: 1.1rem;
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto 26px;
       color: #e5e7eb;
     }
@@ -102,6 +106,18 @@
     main {
       margin-top: 10px;
     }
+    .section {
+      margin-top: 40px;
+      padding: 26px 22px 26px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+    }
+    .section p {
+      color: #d1d5db;
+      font-size: 0.94rem;
+    }
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -115,25 +131,9 @@
       border: 1px solid rgba(148, 163, 184, 0.35);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
     }
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
     .card p {
       font-size: 0.9rem;
       color: #d1d5db;
-    }
-    .section {
-      margin-top: 40px;
-      padding: 26px 22px 26px;
-      border-radius: 22px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
-    }
-    .section p {
-      color: #d1d5db;
-      font-size: 0.94rem;
     }
     .section .card-grid {
       margin-top: 12px;
@@ -141,11 +141,11 @@
     .section .card {
       background: radial-gradient(circle at top left, #111827, #020617);
     }
-    .center {
-      text-align: center;
-    }
     .section .btn-wrap {
       margin-top: 20px;
+      text-align: center;
+    }
+    .center {
       text-align: center;
     }
     footer {
@@ -154,6 +154,69 @@
       font-size: 0.8rem;
       color: #9ca3af;
       opacity: 0.85;
+    }
+
+    /* Backyards & details */
+    .details-wrap {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    details {
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 10px 14px 10px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.94rem;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    .summary-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .summary-tag {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #7dd3fc;
+    }
+    .chevron {
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+    details[open] .chevron {
+      transform: rotate(90deg);
+    }
+    details p,
+    details ul {
+      margin-top: 8px;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+    details ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+    details li {
+      margin-bottom: 3px;
+    }
+    .note {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-top: 10px;
     }
 
     @media (max-width: 800px) {
@@ -178,9 +241,9 @@
       <div class="badge">Pilot at CWRU · Launching January</div>
       <h1>Dashly Campus</h1>
       <p class="lead">
-        Jolly Pizza, delivered to your dorm by students who actually live on
-        campus. A small, student-run delivery pilot focused on “winning the
-        backyard” before scaling.
+        Jolly Pizza, Jolly Scholar, and Southside Scholar — delivered to your dorm
+        by students who actually live on campus. A small, student-run delivery pilot
+        focused on “winning the backyard” before scaling.
       </p>
       <div class="actions">
         <a
@@ -188,48 +251,47 @@
           href="https://form.typeform.com/to/HNIQL9YF"
           target="_blank"
           rel="noopener noreferrer"
-          >Get pilot updates</a
         >
+          Get pilot updates
+        </a>
         <a
           class="btn btn-outline"
           href="https://form.typeform.com/to/P1I2VDfR"
           target="_blank"
           rel="noopener noreferrer"
-          >Join the delivery team</a
         >
+          Join the delivery team
+        </a>
       </div>
     </header>
 
     <main>
-      <!-- How it works -->
+      <!-- How it works (simple) -->
       <section class="section">
         <h2>How Dashly works</h2>
         <div class="card-grid">
           <div class="card">
             <h3>1. You order from Jolly</h3>
             <p>
-              Pick your favorite Jolly Pizza items and tell us your dorm and
-              time window. Orders are limited while we pilot so we can run clean
-              operations.
+              Pick your favorite Jolly items and tell us your dorm and time window.
+              Orders are limited while we pilot so we can run clean, predictable operations.
             </p>
           </div>
           <div class="card">
-            <h3>2. A runner picks it up</h3>
+            <h3>2. A runner from your backyard picks it up</h3>
             <p>
-              Dashly runners are CWRU students assigned by “backyard” (North,
-              Middle, South) for fast, predictable pickup from each Jolly
-              location.
+              Dashly runners are CWRU students assigned by “backyard” (North, Middle, South)
+              so pickup and handoff match how campus is actually built.
             </p>
           </div>
           <div class="card">
             <h3>3. We meet you at your dorm</h3>
             <p>
-              We text you when we’re on the way. If you can’t meet us within
-              5&nbsp;minutes after we arrive, we’ll bring your order back to
-              Jolly and you can grab it directly there. While we pilot, we’re
-              keeping it simple — but long-term we’re aiming for warming
-              stations and lockers so your food can stay hot even if you’re
-              delayed.
+              We text you when we’re on the way and meet you at your dorm entrance.
+              If you can’t meet us within 5&nbsp;minutes after we arrive, we’ll bring
+              your order back to the Jolly location it came from and you can grab it there.<br /><br />
+              While we pilot, we’re keeping it simple — long term, we’re aiming for warming
+              stations and lockers so your food can stay hot even if you’re delayed.
             </p>
           </div>
         </div>
@@ -239,8 +301,128 @@
             href="https://form.typeform.com/to/HNIQL9YF"
             target="_blank"
             rel="noopener noreferrer"
-            >Join the pilot waitlist</a
           >
+            Join the pilot waitlist
+          </a>
+        </div>
+      </section>
+
+      <!-- Backyards & delivery windows (click to open) -->
+      <section class="section">
+        <h2>Backyards & delivery windows</h2>
+        <p>
+          Dashly is built around “backyards” instead of a huge, messy delivery radius.
+          Each Jolly location focuses on the dorms that naturally surround it.
+        </p>
+
+        <div class="details-wrap">
+          <details>
+            <summary>
+              <span class="summary-label">
+                North backyard
+                <span class="summary-tag">Served by Jolly Pizza</span>
+              </span>
+              <span class="chevron">▶</span>
+            </summary>
+            <p><strong>Dorms &amp; areas we’re focusing on first:</strong></p>
+            <ul>
+              <li>All first-year dorms</li>
+              <li>STJ</li>
+              <li>The Village</li>
+              <li>Northside upperclass housing</li>
+            </ul>
+            <p>
+              North is our easiest, highest-demand zone, so it’s where we’re most likely to
+              lean in early and test delivery blocks.
+            </p>
+            <p class="note">
+              Greek housing is <strong>intentionally excluded</strong> for the very first phase.
+              Many houses have their own food setups and we want to prove the model with dorms
+              before opening things up.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span class="summary-label">
+                Middle backyard
+                <span class="summary-tag">Served by Jolly Scholar</span>
+              </span>
+              <span class="chevron">▶</span>
+            </summary>
+            <p><strong>Housing we’re grouping into Middle:</strong></p>
+            <ul>
+              <li>Hessler housing</li>
+              <li>Apartments above Plum Market</li>
+              <li>Twin Gables Apartments</li>
+              <li>1716 building</li>
+            </ul>
+            <p>
+              Middle backyard connects directly to Jolly Scholar. As we see traction and can
+              staff runners reliably, we’ll open more windows here.
+            </p>
+            <p class="note">
+              Greek housing in this zone is also <strong>held back initially</strong> until we
+              have stable volume and data from dorms and nearby apartments.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span class="summary-label">
+                South backyard
+                <span class="summary-tag">Served by Southside Scholar</span>
+              </span>
+              <span class="chevron">▶</span>
+            </summary>
+            <p><strong>South campus focus:</strong></p>
+            <ul>
+              <li>Bottom-of-the-hill residences</li>
+              <li>Top-of-the-hill residences</li>
+              <li>Southside upperclass housing</li>
+            </ul>
+            <p>
+              Southside Scholar is the natural anchor here. Once North and Middle are running
+              smoothly, South becomes the next logical expansion point.
+            </p>
+            <p class="note">
+              As with the other backyards, <strong>Greek housing will come later</strong>
+              once we’ve shown real demand and consistent execution.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span class="summary-label">
+                Delivery windows & blocks
+              </span>
+              <span class="chevron">▶</span>
+            </summary>
+            <p>
+              We’re still finalizing exact times with Jolly’s team, but the plan is to run
+              limited, high-signal delivery windows instead of “order anytime.”
+            </p>
+            <p><strong>Right now we’re considering things like:</strong></p>
+            <ul>
+              <li>Tuesday: roughly 11:00 AM – 11:00 PM pilot coverage</li>
+              <li>Saturday: roughly 12:00 PM – 2:00 AM pilot coverage</li>
+            </ul>
+            <p>
+              Within those days, delivery will open in <strong>blocks</strong> so we can batch
+              orders, keep runners efficient, and avoid chaos.
+            </p>
+            <p>
+              A block might look like:
+            </p>
+            <p style="font-size:0.86rem; color:#9ca3af; font-style:italic;">
+              “Jolly Pizza is starting a delivery block for Northside. Get your order in now to
+              be included in this run. Missed it? No worries — we’ll open another block soon.”
+            </p>
+            <p class="note">
+              These details will evolve as we talk with managers and staff, but the core idea
+              stays the same: <strong>tight windows, clean handoffs, and clear expectations.</strong>
+            </p>
+          </details>
         </div>
       </section>
 
@@ -251,23 +433,22 @@
           <div class="card">
             <h3>Built around dorm life</h3>
             <p>
-              Skip the cold walk across campus. Dashly brings Jolly Pizza to
-              your dorm entryway during select night windows in your backyard.
+              Skip the cold walk across campus. Dashly brings Jolly to your dorm
+              entryway during select night windows in your backyard.
             </p>
           </div>
           <div class="card">
             <h3>Backyard-based delivery</h3>
             <p>
-              We’re starting small, block by block, with separate crews for
-              North, Middle, and South — so your runner actually knows your side
-              of campus.
+              We’re launching small, backyard by backyard, with separate crews for
+              North, Middle, and South — so your runner actually knows your side of campus.
             </p>
           </div>
           <div class="card">
             <h3>Simple, flat pricing</h3>
             <p>
-              A flat delivery fee and limited windows while we pilot so we can
-              stay reliable and learn what works before expanding.
+              A flat delivery fee and limited windows while we pilot so we can stay
+              reliable and learn what works before expanding.
             </p>
           </div>
         </div>
@@ -296,14 +477,15 @@
           <div class="card">
             <h3>Student-built infrastructure</h3>
             <p>
-              Dedicated runners today; warming equipment and future locker
-              concepts later. Dashly is designed as a campus-native delivery
-              layer, not just another tab in a delivery app.
+              Dedicated runners today; warming equipment and future locker concepts later.
+              Dashly is designed as a campus-native delivery layer, not just another tab
+              in a delivery app.
             </p>
           </div>
         </div>
         <p style="margin-top: 18px; font-size: 0.9rem;">
-          Interested in partnering or learning more? Email
+          Interested in partnering or learning more?
+          Email
           <a href="mailto:dashlycampus@gmail.com">dashlycampus@gmail.com</a>.
         </p>
       </section>
@@ -312,9 +494,9 @@
       <section class="section center">
         <h2>Join the Dashly pilot team</h2>
         <p style="max-width: 620px; margin: 10px auto 0;">
-          We’re building a small founding crew of reliable students in each
-          backyard: runners, simple dispatch/ops, and basic payments &amp;
-          customer support. Help us prove the model this January.
+          We’re building a small founding crew of reliable students in each backyard:
+          runners, simple dispatch/ops, and basic payments &amp; customer support.
+          Help us prove the model this January.
         </p>
         <div class="btn-wrap">
           <a
@@ -322,8 +504,9 @@
             href="https://form.typeform.com/to/P1I2VDfR"
             target="_blank"
             rel="noopener noreferrer"
-            >Apply to join the team</a
           >
+            Apply to join the team
+          </a>
         </div>
       </section>
     </main>
