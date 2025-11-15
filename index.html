@@ -2,59 +2,335 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=https://form.typeform.com/to/Ocdz1QiU" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashly Campus – Meal Plan Survey</title>
+  <title>Dashly Campus – Jolly Pizza to Your Dorm</title>
+  <meta
+    name="description"
+    content="Dashly Campus is a student-run delivery pilot at CWRU, bringing Jolly Pizza directly to dorm entrances across campus using a backyard model."
+  />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
       background: #050816;
       color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    header {
+      padding: 24px 0 40px;
       text-align: center;
     }
-    .box {
-      max-width: 520px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 14px;
-      padding: 28px 24px 30px;
-      border: 1px solid rgba(148,163,184,0.4);
-    }
-    h1 { font-size: 1.8rem; margin-bottom: 10px; }
-    p { font-size: 0.98rem; margin-bottom: 18px; opacity: 0.92; }
-    a.button {
+    .badge {
       display: inline-block;
-      margin-top: 4px;
-      padding: 10px 20px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: #5f5cff;
-      font-weight: 600;
-      text-decoration: none;
+      background: rgba(96, 165, 250, 0.14);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 1.7rem;
+      margin: 32px 0 12px;
+    }
+    p.lead {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 0 auto 26px;
+      color: #e5e7eb;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.96rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.16s ease-out;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: #6366f1;
+      border-color: #6366f1;
       color: #f9fafb;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.45);
     }
-    a.button:hover {
-      background: #7876ff;
+    .btn-primary:hover {
+      background: #4f46e5;
+      border-color: #4f46e5;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(79, 70, 229, 0.6);
     }
-    small { display: block; margin-top: 10px; opacity: 0.7; font-size: 0.8rem; }
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+    .btn-outline:hover {
+      border-color: #6366f1;
+      color: #e0e7ff;
+      background: rgba(79, 70, 229, 0.08);
+    }
+    main {
+      margin-top: 10px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      background: #0b1120;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
+    }
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+    .section {
+      margin-top: 40px;
+      padding: 26px 22px 26px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+    }
+    .section p {
+      color: #d1d5db;
+      font-size: 0.94rem;
+    }
+    .section .card-grid {
+      margin-top: 12px;
+    }
+    .section .card {
+      background: radial-gradient(circle at top left, #111827, #020617);
+    }
+    .center {
+      text-align: center;
+    }
+    .section .btn-wrap {
+      margin-top: 20px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+      .container {
+        padding: 24px 18px 40px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 22px 18px 22px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Before you access Dashly…</h1>
-    <p>
-      We’re studying how CWRU students use (or don’t use) the meal plan so we can
-      design Dashly Campus the right way.<br><br>
-      Please take 30–60 seconds to complete this short survey. After you submit,
-      you’ll see a button to continue to the Dashly Campus site.
-    </p>
-    <a class="button" href="https://form.typeform.com/to/Ocdz1QiU">
-      Take the meal plan survey
-    </a>
-    <small>If you are not redirected automatically, tap the button above.</small>
+  <div class="container">
+    <header>
+      <div class="badge">Pilot at CWRU · Launching January</div>
+      <h1>Dashly Campus</h1>
+      <p class="lead">
+        Jolly Pizza, delivered to your dorm by students who actually live on
+        campus. A small, student-run delivery pilot focused on “winning the
+        backyard” before scaling.
+      </p>
+      <div class="actions">
+        <a
+          class="btn btn-primary"
+          href="https://form.typeform.com/to/HNIQL9YF"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Get pilot updates</a
+        >
+        <a
+          class="btn btn-outline"
+          href="https://form.typeform.com/to/P1I2VDfR"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Join the delivery team</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- How it works -->
+      <section class="section">
+        <h2>How Dashly works</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>1. You order from Jolly</h3>
+            <p>
+              Pick your favorite Jolly Pizza items and tell us your dorm and
+              time window. Orders are limited while we pilot so we can run clean
+              operations.
+            </p>
+          </div>
+          <div class="card">
+            <h3>2. A runner picks it up</h3>
+            <p>
+              Dashly runners are CWRU students assigned by “backyard” (North,
+              Middle, South) for fast, predictable pickup from each Jolly
+              location.
+            </p>
+          </div>
+          <div class="card">
+            <h3>3. We meet you at your dorm</h3>
+            <p>
+              We text you when we’re on the way. If you can’t meet us within
+              5&nbsp;minutes after we arrive, we’ll bring your order back to
+              Jolly and you can grab it directly there. While we pilot, we’re
+              keeping it simple — but long-term we’re aiming for warming
+              stations and lockers so your food can stay hot even if you’re
+              delayed.
+            </p>
+          </div>
+        </div>
+        <div class="btn-wrap">
+          <a
+            class="btn btn-primary"
+            href="https://form.typeform.com/to/HNIQL9YF"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Join the pilot waitlist</a
+          >
+        </div>
+      </section>
+
+      <!-- For students -->
+      <section class="section">
+        <h2>For students</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Built around dorm life</h3>
+            <p>
+              Skip the cold walk across campus. Dashly brings Jolly Pizza to
+              your dorm entryway during select night windows in your backyard.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Backyard-based delivery</h3>
+            <p>
+              We’re starting small, block by block, with separate crews for
+              North, Middle, and South — so your runner actually knows your side
+              of campus.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Simple, flat pricing</h3>
+            <p>
+              A flat delivery fee and limited windows while we pilot so we can
+              stay reliable and learn what works before expanding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- For partners -->
+      <section class="section">
+        <h2>For restaurants &amp; campus partners</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Win each backyard first</h3>
+            <p>
+              Instead of trying to serve the whole campus at once, Dashly grows
+              volume around each Jolly location — North, Middle, and South —
+              where it’s easiest to serve consistently.
+            </p>
+          </div>
+          <div class="card">
+            <h3>No third-party app chaos</h3>
+            <p>
+              Student-run operations, direct communication, and simple reporting
+              instead of high-fee marketplace apps and random drivers who don’t
+              know campus.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Student-built infrastructure</h3>
+            <p>
+              Dedicated runners today; warming equipment and future locker
+              concepts later. Dashly is designed as a campus-native delivery
+              layer, not just another tab in a delivery app.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 18px; font-size: 0.9rem;">
+          Interested in partnering or learning more? Email
+          <a href="mailto:dashlycampus@gmail.com">dashlycampus@gmail.com</a>.
+        </p>
+      </section>
+
+      <!-- Join team -->
+      <section class="section center">
+        <h2>Join the Dashly pilot team</h2>
+        <p style="max-width: 620px; margin: 10px auto 0;">
+          We’re building a small founding crew of reliable students in each
+          backyard: runners, simple dispatch/ops, and basic payments &amp;
+          customer support. Help us prove the model this January.
+        </p>
+        <div class="btn-wrap">
+          <a
+            class="btn btn-primary"
+            href="https://form.typeform.com/to/P1I2VDfR"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Apply to join the team</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Dashly Campus · Built by students at CWRU
+    </footer>
   </div>
 </body>
 </html>
